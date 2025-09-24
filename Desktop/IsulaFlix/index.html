@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="fr" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark light" />
+    <title>StreamFlix • Leets</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Aller au contenu</a>
+
+    <header class="site-header" id="header" role="banner">
+      <div class="container header-inner">
+        <a class="brand" href="#" aria-label="StreamFlix accueil">
+          <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M4 4h6l6 24h-6zM16 4h6l6 24h-6z"/></svg>
+          <span class="brand-name">StreamFlix</span>
+        </a>
+
+        <nav class="primary-nav" aria-label="Navigation principale">
+          <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu">☰</button>
+          <ul id="navMenu" class="nav-list" role="tablist">
+            <li><a class="nav-link is-active" data-tab="home" href="#home">Accueil</a></li>
+            <li><a class="nav-link" data-tab="series" href="#series">Séries</a></li>
+            <li><a class="nav-link" data-tab="films" href="#films">Films</a></li>
+            <li><a class="nav-link" data-tab="nouveaux" href="#nouveaux">Nouveautés</a></li>
+            <li><a class="nav-link" data-tab="ma-liste" href="#list">Ma liste</a></li>
+            <span class="nav-indicator" aria-hidden="true"></span>
+          </ul>
+        </nav>
+
+        <div class="actions">
+          <div class="theme-picker">
+            <button id="themeToggle" class="btn ghost" aria-haspopup="listbox" aria-expanded="false">Thème</button>
+            <ul id="themeMenu" class="theme-menu hidden" role="listbox" aria-label="Choisir un thème">
+              <li role="option" data-theme="dark" aria-selected="true">Sombre</li>
+              <li role="option" data-theme="light">Clair</li>
+              <li role="option" data-theme="sepia">Cinéma</li>
+            </ul>
+          </div>
+          <button class="btn primary">S'abonner</button>
+        </div>
+      </div>
+    </header>
+
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+      <div class="container">
+        <ol id="breadcrumb" class="crumbs" role="list"></ol>
+      </div>
+    </nav>
+
+    <main id="main">
+      <section class="hero" id="home" aria-label="Hero" data-title="Accueil">
+        <div class="hero-media" aria-hidden="true">
+          <div class="layer layer-back"></div>
+          <div class="layer layer-mid"></div>
+          <div class="layer layer-front"></div>
+        </div>
+        <div class="container hero-content">
+          <h1 class="hero-title"><span>Regardez</span> sans limites.</h1>
+          <p class="hero-sub">Films, séries et plus encore. Où vous voulez.</p>
+          <div class="hero-cta">
+            <button class="btn primary">Commencer</button>
+            <button class="btn ghost">En savoir plus</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="rail" id="series" aria-labelledby="series-title" data-title="Séries">
+        <div class="container">
+          <h2 id="series-title" class="section-title">Tendances Séries</h2>
+          <div class="grid movies" data-skeleton>
+            <!-- Cards inserted by JS -->
+          </div>
+        </div>
+      </section>
+
+      <section class="rail" id="films" aria-labelledby="films-title" data-title="Films">
+        <div class="container">
+          <h2 id="films-title" class="section-title">Populaire Films</h2>
+          <div class="grid movies">
+            <!-- Cards inserted by JS -->
+          </div>
+        </div>
+      </section>
+
+      <section class="rail" id="nouveaux" aria-labelledby="news-title" data-title="Nouveautés">
+        <div class="container">
+          <h2 id="news-title" class="section-title">Nouveautés</h2>
+          <div class="grid movies">
+            <!-- Cards inserted by JS -->
+          </div>
+        </div>
+      </section>
+
+      <section class="rail" id="list" aria-labelledby="list-title" data-title="Ma liste">
+        <div class="container">
+          <h2 id="list-title" class="section-title">Ma liste</h2>
+          <div class="grid movies" data-user-list>
+            <!-- User list populated via JS -->
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> StreamFlix by Leets</p>
+        <nav aria-label="Pied de page">
+          <a href="#">Mentions</a>
+          <a href="#">Confidentialité</a>
+          <a href="#">Cookies</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="scripts/main.js" defer></script>
+  </body>
+  </html>
+
